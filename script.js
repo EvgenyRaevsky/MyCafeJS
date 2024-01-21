@@ -134,7 +134,7 @@ const months = {
 // Сутки (Тут формирутеся информация за сутки, сколько посетителей пришло, какие были заказы по каждой позиции отдельно, прибыль)
 const Day = () => {
     let moneyDay = 0;
-    const people = getRandNumber(MIN_PEOPLE, MAX_PEOPLE);
+    let people = getRandNumber(MIN_PEOPLE, MAX_PEOPLE);
     let time = TIME_START * 60 * 60 + (TIME_DINNER + TIME_SMOKE_BREAK) * 60;
     for (let i = 0; i < people; i++) {
         const numDrinks = numberDrinks();
@@ -156,12 +156,14 @@ const Day = () => {
                     time += ingridientTime;
                 } else {
                     time += ingridientTime;
+                    people = i;
                     break;
                 }
             }
             time += drinksTime;
         } else {
             time += drinksTime;
+            people = i;
             break;
         };
     }
