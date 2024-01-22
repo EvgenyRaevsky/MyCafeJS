@@ -216,7 +216,7 @@ Year();
 
 
 // Создание HTML и заполение контента полученного выше в таблицу 
-const body = document.querySelector('body');
+const main = document.querySelector('main');
 const table = document.createElement('table');
 
 const theadTable = () => {
@@ -362,7 +362,7 @@ tbodyTable = () => {
 tbodyTable();
 
 table.append(tbody);
-body.append(table);
+main.append(table);
 
 
 // Создание модального окна для просмотра заработка за каждый день выбранного месяца
